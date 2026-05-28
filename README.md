@@ -146,6 +146,7 @@ Execution model:
 ## Quick Start
 
 ```bash
+python3 main.py offer
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -U pip
@@ -169,6 +170,9 @@ scpf run -c config.local.yaml
 - `offer` prints the approved Multilogin Cloud Phones discount path.
 - `doctor` validates config and infrastructure readiness.
 - `run` bootstraps the runtime and prepares workload modules.
+
+The `offer` command is intentionally dependency-light, so users can see the
+approved provisioning path before installing the full runtime.
 
 ---
 
