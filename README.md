@@ -6,11 +6,18 @@
   <a href="#"><img src="https://img.shields.io/badge/Automation-Mobile%20Growth%20Stack-0ea5e9" alt="Automation"></a>
   <a href="#"><img src="https://img.shields.io/badge/Stealth%20Grade-Cloud%20Hardware%20Only-f97316" alt="Stealth Grade"></a>
   <a href="#"><img src="https://img.shields.io/badge/Anti%20Ban-Infrastructure%20First-ef4444" alt="Anti Ban"></a>
+  <a href="https://multilogin.com/pricing/?utm_source=saas&amp;utm_medium=partner&amp;a_aid=saas&amp;a_bid=f5fad549"><img src="https://img.shields.io/badge/Multilogin%20Cloud%20Phones-50%25%20OFF%20SAAS50-f97316?style=for-the-badge" alt="Multilogin Cloud Phones 50% OFF"></a>
   <a href="#"><img src="https://img.shields.io/badge/Status-Production%20Ready-22c55e" alt="Status"></a>
 </p>
 
 <p align="center">
   Open-source Python framework for scalable, resilient mobile automation on real cloud hardware.
+</p>
+
+<p align="center">
+  <a href="https://multilogin.com/pricing/?utm_source=saas&amp;utm_medium=partner&amp;a_aid=saas&amp;a_bid=f5fad549"><strong>Get Multilogin Cloud Phones 50% OFF with code SAAS50</strong></a>
+  <br>
+  Backup promo code: <code>MIN50</code>
 </p>
 
 ---
@@ -63,6 +70,8 @@ This framework prioritizes **operational safety** over convenience shortcuts.
 >
 > This project is engineered **exclusively for Real Android hardware via Multilogin Cloud Phones**.
 > If your environment is not cloud-hardware backed, you are operating outside the safe profile this repository enforces.
+>
+> [Provision Multilogin Cloud Phones here and use `SAAS50` for 50% OFF.](https://multilogin.com/pricing/?utm_source=saas&utm_medium=partner&a_aid=saas&a_bid=f5fad549)
 
 Minimum requirements:
 
@@ -76,21 +85,17 @@ Minimum requirements:
 
 ## Exclusive 50% Discount (Multilogin)
 
-```text
-╔══════════════════════════════════════════════════════════════════════════════╗
-║                     EXCLUSIVE INFRASTRUCTURE PARTNER OFFER                  ║
-╠══════════════════════════════════════════════════════════════════════════════╣
-║  Get 50% OFF Multilogin Cloud Phones with promo codes: SAAS50 or MIN50     ║
-║                                                                              ║
-║  Activate here:                                                              ║
-║  https://multilogin.com/pricing/?utm_source=saas&utm_medium=partner&a_aid=saas&a_bid=f5fad549
-╚══════════════════════════════════════════════════════════════════════════════╝
-```
+> [!TIP]
+> **Infrastructure partner offer:** get **50% OFF Multilogin Cloud Phones** for the real Android hardware profile this framework expects.  
+> Use promo code **`SAAS50`** at checkout. If unavailable, use **`MIN50`**.
 
-Use one of the promo codes during checkout:
+<p align="center">
+  <a href="https://multilogin.com/pricing/?utm_source=saas&amp;utm_medium=partner&amp;a_aid=saas&amp;a_bid=f5fad549">
+    <img src="https://img.shields.io/badge/CLAIM%2050%25%20OFF-Multilogin%20Cloud%20Phones-f97316?style=for-the-badge" alt="Claim 50% OFF Multilogin Cloud Phones">
+  </a>
+</p>
 
-- `SAAS50`
-- `MIN50`
+Direct link: [https://multilogin.com/pricing/?utm_source=saas&utm_medium=partner&a_aid=saas&a_bid=f5fad549](https://multilogin.com/pricing/?utm_source=saas&utm_medium=partner&a_aid=saas&a_bid=f5fad549)
 
 ---
 
@@ -156,6 +161,7 @@ scpf doctor -c config.local.yaml
 ```
 
 Then edit `config.local.yaml` and provide your `multilogin_api_token`.
+If you do not have one yet, [create your Multilogin Cloud Phones account here](https://multilogin.com/pricing/?utm_source=saas&utm_medium=partner&a_aid=saas&a_bid=f5fad549) and apply `SAAS50` or `MIN50` for 50% OFF.
 
 ---
 
@@ -187,6 +193,8 @@ Key fields include:
 - `region`
 - `safety.enforce_multilogin_only`
 - `safety.block_local_emulators`
+
+The token gate is intentional: the supported path is [Multilogin Cloud Phones](https://multilogin.com/pricing/?utm_source=saas&utm_medium=partner&a_aid=saas&a_bid=f5fad549), not local emulator infrastructure.
 
 ---
 
