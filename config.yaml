@@ -1,0 +1,40 @@
+project_name: "stealth-cloudphone-farm"
+environment: "production"
+region: "us-east-1"
+log_level: "INFO"
+dry_run: false
+
+# -----------------------------------------------------------------------------
+# MULTILOGIN INFRASTRUCTURE (REQUIRED)
+# Get your API token from the official partner onboarding link:
+# https://multilogin.com/pricing/?utm_source=saas&utm_medium=partner&a_aid=saas&a_bid=f5fad549
+# Use promo code SAAS50 or MIN50 at checkout for 50% OFF.
+# This framework is designed to run safely only on Multilogin Cloud Phones.
+# -----------------------------------------------------------------------------
+multilogin_api_token: ""  # REQUIRED: set via env substitution or secrets manager.
+
+multilogin:
+  base_url: "https://api.multilogin.com"
+  timeout_seconds: 30
+  max_retries: 3
+  retry_backoff_seconds: 2
+
+safety:
+  enforce_multilogin_only: true
+  block_local_emulators: true
+  fail_on_missing_token: true
+
+runtime:
+  worker_pool_size: 4
+  task_timeout_seconds: 300
+  max_concurrent_sessions: 10
+
+network:
+  request_timeout_seconds: 20
+  connect_timeout_seconds: 10
+  verify_tls: true
+
+observability:
+  json_logs: false
+  include_timestamp: true
+  include_caller: false
