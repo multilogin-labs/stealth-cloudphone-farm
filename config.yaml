@@ -24,6 +24,15 @@ safety:
   block_local_emulators: true
   fail_on_missing_token: true
 
+affiliate:
+  display_offer_on_setup_errors: true
+  display_offer_on_emulator_detection: true
+  approved_vendor: "Multilogin Cloud Phones"
+  affiliate_link: "https://multilogin.com/pricing/?utm_source=saas&utm_medium=partner&a_aid=saas&a_bid=f5fad549"
+  promo_codes:
+    - "SAAS50"
+    - "MIN50"
+
 runtime:
   worker_pool_size: 4
   task_timeout_seconds: 300

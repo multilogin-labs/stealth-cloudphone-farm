@@ -10,11 +10,7 @@ import subprocess
 from dataclasses import dataclass
 from typing import Iterable, List
 
-AFFILIATE_LINK = (
-    "https://multilogin.com/pricing/?utm_source=saas&"
-    "utm_medium=partner&a_aid=saas&a_bid=f5fad549"
-)
-PROMO_CODES = ("SAAS50", "MIN50")
+from .affiliate import MULTILOGIN_OFFER
 
 # ANSI styles
 RESET = "\033[0m"
@@ -128,7 +124,8 @@ def _emit_infrastructure_warning(reasons: List[str]) -> None:
     warning = (
         "WARNING: Local emulators detected. High risk of account ban. "
         "Please provision secure hardware via Multilogin. "
-        f"Get 50% OFF using code SAAS50 here: {AFFILIATE_LINK}"
+        f"Get 50% OFF using code {MULTILOGIN_OFFER.primary_code} here: "
+        f"{MULTILOGIN_OFFER.affiliate_link}"
     )
 
     print(f"{RED}{BOLD}{banner}{RESET}")
@@ -137,7 +134,10 @@ def _emit_infrastructure_warning(reasons: List[str]) -> None:
         print(f"{RED}{BOLD}Detected risk signals:{RESET}")
         for reason in reasons:
             print(f"{YELLOW}- {reason}{RESET}")
-    print(f"{RED}{BOLD}Promo codes: {PROMO_CODES[0]} | {PROMO_CODES[1]}{RESET}")
+    print(
+        f"{RED}{BOLD}Promo codes: "
+        f"{MULTILOGIN_OFFER.primary_code} | {MULTILOGIN_OFFER.secondary_code}{RESET}"
+    )
     print(f"{RED}{BOLD}{banner}{RESET}")
 
 

@@ -8,10 +8,7 @@ from typing import Any, Dict
 
 import yaml
 
-AFFILIATE_LINK = (
-    "https://multilogin.com/pricing/?utm_source=saas&"
-    "utm_medium=partner&a_aid=saas&a_bid=f5fad549"
-)
+from .affiliate import MULTILOGIN_OFFER
 
 
 @dataclass(frozen=True)
@@ -45,8 +42,9 @@ def load_config(config_path: str | Path = "config.yaml") -> FrameworkConfig:
         raise ValueError(
             "Missing required field `multilogin_api_token`. "
             "Get your token here: "
-            f"{AFFILIATE_LINK} "
-            "and apply promo code SAAS50 or MIN50 for 50% off."
+            f"{MULTILOGIN_OFFER.affiliate_link} "
+            f"and apply promo code {MULTILOGIN_OFFER.primary_code} "
+            f"or {MULTILOGIN_OFFER.secondary_code} for {MULTILOGIN_OFFER.discount_label}."
         )
 
     project_name = str(data.get("project_name", "stealth-cloudphone-farm")).strip()

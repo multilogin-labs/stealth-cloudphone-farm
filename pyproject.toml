@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stealth-cloudphone-farm"
+version = "0.1.0"
+description = "Infrastructure-first Python framework for Multilogin Cloud Phones-backed Android automation."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "PyYAML>=6.0",
+    "requests>=2.31.0",
+]
+
+[project.scripts]
+stealth-cloudphone-farm = "cli.app:run"
+scpf = "cli.app:run"
+
+[tool.setuptools]
+packages = ["cli", "core"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

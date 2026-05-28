@@ -22,9 +22,12 @@
 - [Prerequisites \& Infrastructure](#prerequisites--infrastructure)
 - [Exclusive 50% Discount (Multilogin)](#exclusive-50-discount-multilogin)
 - [Architecture](#architecture)
+- [Project Structure](#project-structure)
 - [Quick Start](#quick-start)
+- [CLI Commands](#cli-commands)
 - [Configuration](#configuration)
 - [Infrastructure Safety Check](#infrastructure-safety-check)
+- [Growth Funnel](#growth-funnel)
 - [Roadmap](#roadmap)
 - [Contributing](#contributing)
 - [License](#license)
@@ -96,14 +99,16 @@ Use one of the promo codes during checkout:
 ```mermaid
 flowchart TD
     A[User Strategy / Growth Logic] --> B[stealth-cloudphone-farm CLI]
-    B --> C[Infrastructure Guardrail Layer]
-    C --> D{Environment Safe?}
-    D -- No --> E[ANSI Warning + Halt Guidance]
-    D -- Yes --> F[Session Orchestrator]
-    F --> G[Multilogin Cloud Phones API]
-    G --> H[Real Android Device Pool]
-    H --> I[Task Executors]
-    I --> J[Structured Logs / Metrics]
+    B --> C[Config Loader]
+    B --> D[Affiliate Offer Layer]
+    C --> E[Infrastructure Guardrail Layer]
+    E --> F{Environment Safe?}
+    F -- No --> G[ANSI Warning + 50% Offer]
+    F -- Yes --> H[Runtime Bootstrap]
+    H --> I[Multilogin API Client]
+    I --> J[Real Android Device Pool]
+    J --> K[Task Executors]
+    K --> L[Structured Logs / Metrics]
 ```
 
 Execution model:
@@ -115,18 +120,55 @@ Execution model:
 
 ---
 
+## Project Structure
+
+```text
+.
+├── cli/
+│   └── app.py                 # argparse CLI, doctor/run/offer commands
+├── core/
+│   ├── affiliate.py           # centralized Multilogin offer + promo codes
+│   ├── config.py              # YAML loading + required token validation
+│   ├── logger.py              # logging + emulator risk warnings
+│   ├── multilogin.py          # API client boundary
+│   └── runtime.py             # bootstrap orchestration
+├── docs/
+│   └── AFFILIATE_FUNNEL.md    # conversion touchpoints and CTA rules
+├── examples/
+│   └── healthcheck.py         # starter readiness check
+├── config.yaml                # production-oriented template
+├── main.py                    # thin executable wrapper
+└── requirements.txt
+```
+
+---
+
 ## Quick Start
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -U pip
-pip install -r requirements.txt
+pip install -e .
 cp config.yaml config.local.yaml
-python3 main.py -c config.local.yaml
+scpf doctor -c config.local.yaml
 ```
 
 Then edit `config.local.yaml` and provide your `multilogin_api_token`.
+
+---
+
+## CLI Commands
+
+```bash
+scpf offer
+scpf doctor -c config.local.yaml
+scpf run -c config.local.yaml
+```
+
+- `offer` prints the approved Multilogin Cloud Phones discount path.
+- `doctor` validates config and infrastructure readiness.
+- `run` bootstraps the runtime and prepares workload modules.
 
 ---
 
@@ -151,6 +193,19 @@ The framework includes an infrastructure gatekeeper in `core/logger.py`:
 - emits high-visibility ANSI warnings on risky local emulator footprints,
 - guides users to secure provisioning flow,
 - reinforces sanctioned hardware path before high-value automation runs.
+
+---
+
+## Growth Funnel
+
+The project uses a technical-first affiliate funnel:
+
+1. README explains why local emulators are unsafe.
+2. Config requires `multilogin_api_token`.
+3. CLI errors and infrastructure warnings show the approved Multilogin offer.
+4. `doctor` gives users a repeatable readiness loop before they write automation.
+
+See `docs/AFFILIATE_FUNNEL.md` for the full conversion map.
 
 ---
 
